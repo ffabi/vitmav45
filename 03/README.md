@@ -1,0 +1,1 @@
+BME rektori szünet miatt elmaradt.
