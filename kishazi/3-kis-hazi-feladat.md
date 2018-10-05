@@ -1,7 +1,7 @@
 # Deep Learning a gyakorlatban Python és LUA alapon
 ## Harmadik kis házi feladat
 
-Készíts előrecsatolt mély neuronhálót/hálókat, ami megjósolja a várható hőmérsékletet egy napra, egy hétre és egy hónapra előre Budapesten. 
+Készíts előrecsatolt mély neuronhálót/hálókat, ami megjósolja a várható középhőmérsékletet (max és min átlaga adott napra) egy napra, egy hétre és egy hónapra előre Budapesten. 
 
 Lehetséges források: 
 * http://idojarasbudapest.hu/archivalt-idojaras
