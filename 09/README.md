@@ -1,0 +1,1 @@
+November 1-ei szünet miatt elmaradt.
