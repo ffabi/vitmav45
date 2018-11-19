@@ -27,6 +27,9 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from matplotlib import animation
 import seaborn as sns
+import io
+import base64
+from IPython.display import HTML
 
 sns.set(color_codes=True)
 
@@ -154,6 +157,11 @@ def save_animation(anim_frames, anim_path, sample_range):
     )
     anim.save(anim_path, fps=30, extra_args=['-vcodec', 'libx264'])
 
+def show_video(video_file):
+    video = io.open(video_file, 'r+b').read()
+    encoded = base64.b64encode(video)
+    return HTML(data='''<video alt="test" controls>
+    <source src="data:video/mp4;base64,{0}" type="video/mp4" /> </video>'''.format(encoded.decode('ascii')))
 
 ### ezek a függvények a parancssoros argumentumok kezeléséhez kellenek
 
