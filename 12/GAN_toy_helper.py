@@ -155,32 +155,13 @@ def save_animation(anim_frames, anim_path, sample_range):
         frames=len(anim_frames),
         blit=True
     )
-    anim.save(anim_path, fps=30, extra_args=['-vcodec', 'libx264'])
+    anim.save(anim_path, fps=3, extra_args=['-vcodec', 'libx264'])
 
 def show_video(video_file):
     video = io.open(video_file, 'r+b').read()
     encoded = base64.b64encode(video)
     return HTML(data='''<video alt="test" controls>
     <source src="data:video/mp4;base64,{0}" type="video/mp4" /> </video>'''.format(encoded.decode('ascii')))
-
-### ezek a függvények a parancssoros argumentumok kezeléséhez kellenek
-
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--num-steps', type=int, default=5000,
-                        help='the number of training steps to take')
-    parser.add_argument('--hidden-size', type=int, default=4,
-                        help='MLP hidden size')
-    parser.add_argument('--batch-size', type=int, default=8,
-                        help='the batch size')
-    parser.add_argument('--log-every', type=int, default=10,
-                        help='print loss after this many steps')
-    parser.add_argument('--anim-path', type=str, default=None,
-                        help='path to the output animation file')
-    parser.add_argument('--anim-every', type=int, default=1,
-                        help='save every Nth frame for animation')
-    return parser.parse_args()
-
 
 
 ### ezek a függvények a háló összerakásához szükségesek
