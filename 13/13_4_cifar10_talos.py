@@ -1,4 +1,23 @@
-# talos from https://github.com/autonomio/talos
+'''
+Copyright
+
+Jelen forráskód a Budapesti Műszaki és Gazdaságtudományi Egyetemen tartott
+"Deep Learning a gyakorlatban Python és LUA alapon" tantárgy segédanyagaként készült.
+
+A tantárgy honlapja: http://smartlab.tmit.bme.hu/oktatas-deep-learning
+Deep Learning kutatás: http://smartlab.tmit.bme.hu/deep-learning
+
+A forráskódot GPLv3 licensz védi. Újrafelhasználás esetén lehetőség szerint kérjük
+az alábbi szerzőt értesíteni.
+
+2018 (c) Csapó Tamás Gábor (csapot kukac tmit pont bme pont hu),
+Gyires-Tóth Bálint, Zainkó Csaba
+
+
+Links:
+    [talos] https://github.com/autonomio/talos
+'''
+
 import talos
 
 import keras
@@ -36,17 +55,19 @@ x_train /= 255
 x_test /= 255
 
 from keras.activations import relu, elu, softmax
-from keras.optimizers import Adam, Nadam
 
+# talos hiperparaméter optimalizáláshoz kell
 p = {
     'first_neuron': [128, 256, 512],
     'hidden_layers': [0, 1, 2],
     'dropout': [0, 0.1, 0.2, 0.3, 0.4, 0.5],
     'activation': [relu, elu],
     'last_activation': ['softmax'],
-    'optimizer': [Adam, Nadam],
+    'optimizer': ['adam', 'sgd', 'rmsprop'],
     'batch_size': [64, 128, 256]
 }
+
+
 
 # add input parameters to the function
 def do_training(x_train, y_train, x_val, y_val, params):

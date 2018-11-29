@@ -1,3 +1,23 @@
+'''
+Copyright
+
+Jelen forráskód a Budapesti Műszaki és Gazdaságtudományi Egyetemen tartott
+"Deep Learning a gyakorlatban Python és LUA alapon" tantárgy segédanyagaként készült.
+
+A tantárgy honlapja: http://smartlab.tmit.bme.hu/oktatas-deep-learning
+Deep Learning kutatás: http://smartlab.tmit.bme.hu/deep-learning
+
+A forráskódot GPLv3 licensz védi. Újrafelhasználás esetén lehetőség szerint kérjük
+az alábbi szerzőt értesíteni.
+
+2018 (c) Csapó Tamás Gábor (csapot kukac tmit pont bme pont hu),
+Gyires-Tóth Bálint, Zainkó Csaba
+
+
+Links:
+    [hyperas] https://github.com/maxpumperla/hyperas
+'''
+
 # !pip3 install hyperas
 
 # based on https://github.com/keras-team/keras/blob/master/examples/cifar10_cnn.py
@@ -38,7 +58,7 @@ def data():
     y_test = keras.utils.to_categorical(y_test, num_classes)
 
     # reshape for FC-DNN
-    x_train = np.reshape(x_train,(50000,3072)) # 32x32
+    x_train = np.reshape(x_train,(50000,3072)) # 32x32x3
     x_test = np.reshape(x_test,(10000,3072))
     x_train = x_train.astype('float32')
     x_test = x_test.astype('float32')

@@ -1,8 +1,27 @@
+'''
+Copyright
+
+Jelen forráskód a Budapesti Műszaki és Gazdaságtudományi Egyetemen tartott
+"Deep Learning a gyakorlatban Python és LUA alapon" tantárgy segédanyagaként készült.
+
+A tantárgy honlapja: http://smartlab.tmit.bme.hu/oktatas-deep-learning
+Deep Learning kutatás: http://smartlab.tmit.bme.hu/deep-learning
+
+A forráskódot GPLv3 licensz védi. Újrafelhasználás esetén lehetőség szerint kérjük
+az alábbi szerzőt értesíteni.
+
+2018 (c) Csapó Tamás Gábor (csapot kukac tmit pont bme pont hu),
+Gyires-Tóth Bálint, Zainkó Csaba
+
+
+Links:
+    [talos] https://github.com/autonomio/talos
+'''
+
 import talos
 import matplotlib.pyplot as plt
 
-# r = talos.Reporting('112818223110_.csv')
-# r = talos.Reporting('112918000844_.csv')
+# ez a log kb 600 tanítás eredményét tartalmazza
 r = talos.Reporting('112918010504_.csv')
 
 # eredmények megnézése

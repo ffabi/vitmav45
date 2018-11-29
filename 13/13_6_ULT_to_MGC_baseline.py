@@ -1,6 +1,31 @@
+'''
+Copyright
+
+Jelen forráskód a Budapesti Műszaki és Gazdaságtudományi Egyetemen tartott
+"Deep Learning a gyakorlatban Python és LUA alapon" tantárgy segédanyagaként készült.
+
+A tantárgy honlapja: http://smartlab.tmit.bme.hu/oktatas-deep-learning
+Deep Learning kutatás: http://smartlab.tmit.bme.hu/deep-learning
+
+A forráskódot GPLv3 licensz védi. Újrafelhasználás esetén lehetőség szerint kérjük
+az alábbi szerzőt értesíteni.
+
+2018 (c) Csapó Tamás Gábor (csapot kukac tmit pont bme pont hu),
+Gyires-Tóth Bálint, Zainkó Csaba
+
+
+Links:
+    [hyperas] https://github.com/maxpumperla/hyperas
+    [UTI-to-MGC with DNN] Tamás Gábor Csapó, Tamás Grósz, Gábor Gosztolya, László Tóth, Alexandra Markó, ,,DNN-based Ultrasound-to-Speech Conversion for a Silent Speech Interface'', Interspeech 2017, Stockholm, Sweden, pp. 3672-3676, 2017., http://smartlab.tmit.bme.hu/downloads/pdf/csapot/Csapo-et-al-interspeech2017-paper.pdf
+'''
+
 # adatok letöltése
 # !wget http://smartlab.tmit.bme.hu/csapo/dl/spkr048_ult.tgz
 # !tar -xzvf spkr048_ult.tgz
+#
+# SPTK telepítése (MGC -> beszéd szintézishez)
+# !apt install sptk
+
 
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,3 +1,23 @@
+'''
+Copyright
+
+Jelen forráskód a Budapesti Műszaki és Gazdaságtudományi Egyetemen tartott
+"Deep Learning a gyakorlatban Python és LUA alapon" tantárgy segédanyagaként készült.
+
+A tantárgy honlapja: http://smartlab.tmit.bme.hu/oktatas-deep-learning
+Deep Learning kutatás: http://smartlab.tmit.bme.hu/deep-learning
+
+A forráskódot GPLv3 licensz védi. Újrafelhasználás esetén lehetőség szerint kérjük
+az alábbi szerzőt értesíteni.
+
+2018 (c) Csapó Tamás Gábor (csapot kukac tmit pont bme pont hu),
+Gyires-Tóth Bálint, Zainkó Csaba
+
+
+Links:
+    [hyperas] https://github.com/maxpumperla/hyperas
+'''
+
 import os
 import os.path
 import numpy as np
@@ -57,8 +77,8 @@ val_loss = val_loss[0:eval]
 best_index = np.argmax(val_acc)
 print('Best performing model: ', hyperparams['n_layer1'][best_index], hyperparams['n_layer2'][best_index], hyperparams['dropout_1'][best_index], hyperparams['dropout_2'][best_index], hyperparams['n_batch'][best_index])
 
-# print(hyperparams['n_layer1'])
-# print(val_acc)
+# vizualizáció:
+# hogyan függenek össze az egyes hiperparaméterek a val_acc-cal?
 
 fig = plt.figure(figsize=(10,7))
 plt.plot(hyperparams['n_layer1'], val_acc, 'x')
@@ -90,7 +110,8 @@ plt.xlabel('n_batch')
 plt.ylabel('val_acc')
 plt.show()
 
-
+# vizualizáció:
+# hogyan függ össze hiperparaméterek kombinációja a val_acc-cal?
 
 fig = plt.figure(figsize=(15,10))
 ax = fig.add_subplot(111, projection='3d')
@@ -108,7 +129,6 @@ ax.set_xlabel('dropout_1')
 ax.set_ylabel('dropout_2')
 ax.set_zlabel('val_acc')
 fig.colorbar(p)
-# ax.colorbar()
 plt.show()
 
 
@@ -119,7 +139,6 @@ ax.set_xlabel('n_layer1')
 ax.set_ylabel('dropout_1')
 ax.set_zlabel('val_acc')
 fig.colorbar(p)
-# ax.colorbar()
 plt.show()
 
 fig = plt.figure(figsize=(15,10))
@@ -129,5 +148,4 @@ ax.set_xlabel('n_batch')
 ax.set_ylabel('dropout_1')
 ax.set_zlabel('val_acc')
 fig.colorbar(p)
-# ax.colorbar()
 plt.show()
